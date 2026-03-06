@@ -182,5 +182,12 @@
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
+<script>
+   
+    if (window.location.search.includes('ref=')) {
+        var clean_url = window.location.protocol + "//" + window.location.host + window.location.pathname;
+        window.history.replaceState({}, document.title, clean_url);
+    }
+</script>
 </body>
 </html>
