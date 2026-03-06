@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CrashBoxPvP - Türkiye'nin en stabil Aternos BoxPvP sunucusu.">
+    <title>Crash | En İyi Aternos Sunucusu</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200;400;600;800&family=Rajdhani:wght@300;500;700&family=JetBrains+Mono:wght@100;400;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="particles-js"></div>
+    <div class="cyber-grid-bg"></div>
+    <div class="vignette"></div>
+    <div class="scanlines"></div>
+
+    <nav id="master-nav">
+        <div class="nav-container">
+            <div class="brand-identity">
+                <div class="brand-logo">
+                    <svg width="40" height="40" viewBox="0 0 100 100">
+                        <polygon points="50,5 95,25 95,75 50,95 5,75 5,25" fill="none" stroke="#00f2ff" stroke-width="5"/>
+                        <path d="M30 40 L50 60 L70 40" fill="none" stroke="#00f2ff" stroke-width="8"/>
+                    </svg>
+                </div>
+                <div class="brand-name">CRASH<span>BOX</span></div>
+            </div>
+
+            <div class="nav-links-wrapper">
+                <ul class="main-links">
+                    <li><a href="#home" class="active"><span class="nav-num">01</span> ANA SAYFA</a></li>
+                    <li><a href="#about"><span class="nav-num">02</span> HAKKIMIZDA</a></li>
+                    <li><a href="#stats"><span class="nav-num">03</span> İSTATİSTİK</a></li>
+                    <li><a href="#store"><span class="nav-num">04</span> MAĞAZA</a></li>
+                    <li><a href="#rules"><span class="nav-num">05</span> KURALLAR</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-actions">
+                <a href="https://discord.gg/NZwx2mxRJW" target="_blank" class="btn-discord">
+                    <i class="fab fa-discord"></i> TOPLULUĞA KATIL
+                </a>
+            </div>
+            
+            <div class="mobile-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <header id="home" class="hero-master">
+        <div class="hero-inner">
+            <div class="hero-content" data-aos="fade-up" data-aos-duration="1500">
+                <div class="top-label">
+                    <span class="pulse-dot"></span> ŞU AN AKTİF: <strong id="live-status">EVET</strong>
+                </div>
+                <h1 class="glitch-main" data-text="CRASH BOXPVP">CRASH BOXPVP</h1>
+                <p class="hero-subtitle">
+                    Sınırları zorlamaya hazır mısın? Türkiye'nin en gelişmiş plugin paketine sahip 
+                    Aternos tabanlı BoxPvP sunucusu seni bekliyor. Hemen IP'yi kopyala ve savaşa katıl!
+                </p>
+
+                <div class="hero-btns">
+                    <div class="ip-copy-module" onclick="copyServerIP()">
+                        <div class="ip-meta">
+                            <span class="label">SUNUCU IP ADRESİ</span>
+                            <span class="value" id="ip-text">CrashBoxpvp.aternos.me:60647</span>
+                        </div>
+                        <div class="ip-icon"><i class="fas fa-clone"></i></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-scroll">
+                <div class="mouse"></div>
+                <span>AŞAĞI KAYDIR</span>
+            </div>
+        </div>
+    </header>
+
+    <section id="stats" class="section-global stats-dark">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="title-main">SİSTEM <span>ANALİZİ</span></h2>
+                <p class="title-sub">Sunucumuzun anlık teknik verileri ve oyuncu başarıları.</p>
+            </div>
+
+            <div class="stats-matrix">
+                <div class="matrix-card" data-aos="zoom-in">
+                    <div class="matrix-icon"><i class="fas fa-microchip"></i></div>
+                    <div class="matrix-data">
+                        <h3 class="counter" data-target="99">0</h3>
+                        <span class="unit">%</span>
+                        <p>UPTIME GÜCÜ</p>
+                    </div>
+                    <div class="matrix-graph">
+                        <canvas id="chart-uptime"></canvas>
+                    </div>
+                </div>
+                <div class="matrix-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="matrix-icon"><i class="fas fa-bolt"></i></div>
+                    <div class="matrix-data">
+                        <h3 class="counter" data-target="20">0</h3>
+                        <span class="unit">TPS</span>
+                        <p>SUNUCU HIZI</p>
+                    </div>
+                    <div class="matrix-indicator green"></div>
+                </div>
+                <div class="matrix-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="matrix-icon"><i class="fas fa-users"></i></div>
+                    <div class="matrix-data">
+                        <h3 class="counter" data-target="50">0</h3>
+                        <span class="unit">+</span>
+                        <p>TOPLAM ÜYE</p>
+                    </div>
+                </div>
+                <div class="matrix-card highlight" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="matrix-icon"><i class="fas fa-skull-crossbones"></i></div>
+                    <div class="matrix-data">
+                        <h3 class="counter" data-target="50">0</h3>
+                        <span class="unit">+</span>
+                        <p>TOPLAM ÖLDÜRME</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="store" class="section-global">
+        <div class="container">
+            <h2 class="section-title-alt">ÖZEL <span>MAĞAZA</span></h2>
+            <div class="store-grid">
+                <div class="package-card" data-aos="flip-right">
+                    <div class="pkg-head">VIP</div>
+                    <div class="pkg-price">150₺ <span>/ Süresiz</span></div>
+                    <ul class="pkg-features">
+                        <li><i class="fas fa-check"></i> Özel VIP Kit</li>
+                        <li><i class="fas fa-check"></i> Sohbet Rengi</li>
+                        <li><i class="fas fa-check"></i> Özel İsim Rengi</li>       
+                            <li><i class="fas fa-check"></i> VIP Sembolü</li>
+                    </ul>
+                    <button onclick="shopRedirect()" class="btn-buy">SATIN AL</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="rules" class="section-global rules-bg">
+        <div class="container">
+            <h2 class="title-main">SUNUCU <span>KURALLARI</span></h2>
+            <div class="rules-list">
+                <div class="rule-item" data-aos="fade-left">
+                    <div class="r-num">01</div>
+                    <p>Hile ve makro kullanımı sınırsız yasaklanma sebebidir.</p>
+                </div>
+                <div class="rule-item" data-aos="fade-left" data-aos-delay="100">
+                    <div class="r-num">02</div>
+                    <p>Küfür, argo ve her türlü toxic davranış mute sebebidir.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-master">
+        <div class="footer-content">
+            <div class="f-logo">CRASH<span>BOX</span></div>
+            <p>Aternos'un en kaliteli BoxPvP topluluğu.</p>
+            <div class="f-social">
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-discord"></i></a>
+            </div>
+        </div>
+        <div class="f-copyright">
+            &copy; 2026 CrashBoxPvP - Tüm Hakları Saklıdır.
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
